@@ -638,7 +638,8 @@ def get_ticker():
     # typer.prompt strips trailing dot-suffixes on some shells (e.g. 000404.SH
     # collapses to 000404). questionary.text reads the raw line.
     ticker = questionary.text(
-        "",
+        "[SPY]:",
+        qmark="",
         validate=lambda value: (
             not value.strip()
             or (
